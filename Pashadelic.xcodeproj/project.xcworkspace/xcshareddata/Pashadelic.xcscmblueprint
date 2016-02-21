@@ -1,0 +1,128 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "99CD476EBACD3D82E2A48EE4C47E1CD5EFBCD3D9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "272F684BDB48C12FB82F63EFB90FF2436BBA2473" : 0,
+    "542E5EAD47EA299C9005C3138923F693160B998F" : 0,
+    "99CD476EBACD3D82E2A48EE4C47E1CD5EFBCD3D9" : 0,
+    "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : 0,
+    "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025" : 0,
+    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : 0,
+    "E609DD15689CC93D8F4D219EB393F30F9F726178" : 0,
+    "351E80158C31C9385E10ADF01B47F27851D47BC2" : 0,
+    "FDD9A4A185F54F0838F102D4C1CAA3CBA75FE713" : 0,
+    "38C2A0D4F62B675E8C16C8BC1437C7753846C8AC" : 0,
+    "A20D666FF4B08EFE53F147818C2D4D17E2242912" : 0,
+    "3DE545B96234B19ABE2659F0F748977006642313" : 0,
+    "E6FE9E0AAEA9D7BB5269D5C6F75DD49454D12CE2" : 0,
+    "61C4B9E3B61282127C102C87B46B8CDE985974AE" : 0,
+    "16ACBFB590A9E1151B4BE762DC3AC04A938B37EF" : 0,
+    "F03E09D7108B6B558326B4A7FA105E304FD0FE55" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4F2B3A43-380A-4810-A461-5D9A5AD7450C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "272F684BDB48C12FB82F63EFB90FF2436BBA2473" : "Pashadelic\/Submodules\/MGWebImage\/Vendors\/libwebp\/",
+    "542E5EAD47EA299C9005C3138923F693160B998F" : "Pashadelic\/Submodules\/FacebookSDK\/vendor\/ios-snapshot-test-case\/",
+    "99CD476EBACD3D82E2A48EE4C47E1CD5EFBCD3D9" : "Pashadelic\/",
+    "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : "Pashadelic\/Submodules\/FacebookSDK\/vendor\/OHHTTPStubs\/OHHTTPStubs\/UnitTests\/AFNetworking\/",
+    "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025" : "Pashadelic\/Submodules\/FacebookSDK\/vendor\/OCMock\/",
+    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : "Pashadelic\/Submodules\/MGWebImage\/",
+    "E609DD15689CC93D8F4D219EB393F30F9F726178" : "Pashadelic\/Submodules\/GPUImage\/",
+    "351E80158C31C9385E10ADF01B47F27851D47BC2" : "Pashadelic\/Submodules\/FontAwesome\/",
+    "FDD9A4A185F54F0838F102D4C1CAA3CBA75FE713" : "Pashadelic\/Submodules\/MGExtraFunctions\/",
+    "38C2A0D4F62B675E8C16C8BC1437C7753846C8AC" : "Pashadelic\/Submodules\/FacebookSDK\/vendor\/OHHTTPStubs\/",
+    "A20D666FF4B08EFE53F147818C2D4D17E2242912" : "Pashadelic\/Submodules\/FacebookSDK\/",
+    "3DE545B96234B19ABE2659F0F748977006642313" : "Pashadelic\/Submodules\/SunMoonCalc\/",
+    "E6FE9E0AAEA9D7BB5269D5C6F75DD49454D12CE2" : "Pashadelic\/Submodules\/MGServerExchange\/",
+    "61C4B9E3B61282127C102C87B46B8CDE985974AE" : "Pashadelic\/Submodules\/FacebookSDK\/Bolts-IOS\/",
+    "16ACBFB590A9E1151B4BE762DC3AC04A938B37EF" : "Pashadelic\/Submodules\/Mixpanel\/",
+    "F03E09D7108B6B558326B4A7FA105E304FD0FE55" : "Pashadelic\/Submodules\/FacebookSDK\/vendor\/OCHamcrest\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pashadelic",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pashadelic.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/github.com\/mixpanel\/mixpanel-iphone.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "16ACBFB590A9E1151B4BE762DC3AC04A938B37EF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/git.chromium.org\/webm\/libwebp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "272F684BDB48C12FB82F63EFB90FF2436BBA2473"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Magnat12\/FontAwesomeKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "351E80158C31C9385E10ADF01B47F27851D47BC2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/AliSoftware\/OHHTTPStubs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38C2A0D4F62B675E8C16C8BC1437C7753846C8AC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Tony89\/SunMoonCalc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DE545B96234B19ABE2659F0F748977006642313"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/facebook\/ios-snapshot-test-case.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "542E5EAD47EA299C9005C3138923F693160B998F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/BoltsFramework\/Bolts-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "61C4B9E3B61282127C102C87B46B8CDE985974AE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/pashadelic\/ios-photo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "99CD476EBACD3D82E2A48EE4C47E1CD5EFBCD3D9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/facebook\/facebook-ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A20D666FF4B08EFE53F147818C2D4D17E2242912"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/github.com\/AFNetworking\/AFNetworking.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Magnat12\/SDWebImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E28E36D423EC87798E52E2BF482E9F7A1E6479D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/erikdoe\/ocmock",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/BradLarson\/GPUImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E609DD15689CC93D8F4D219EB393F30F9F726178"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Magnat12\/MGServerExchange.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E6FE9E0AAEA9D7BB5269D5C6F75DD49454D12CE2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/hamcrest\/OCHamcrest",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F03E09D7108B6B558326B4A7FA105E304FD0FE55"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Magnat12\/MGExtraFunctions.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FDD9A4A185F54F0838F102D4C1CAA3CBA75FE713"
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+//
+//  PDSecondViewController.m
+//  Pashadelic
+//
+//  Created by Виталий Гоженко on 25/6/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "PDNearbyViewController.h"
+#import "PDPhotoTileCell.h"
+#import "MGLocationHelper.h"
+#import "PDNearbyMenuView.h"
+#import "PDPhotoNearbyViewController.h"
+
+@interface PDNearbyViewController ()
+- (void)initInterface;
+- (void)initLocationServices;
+- (void)refreshSortButtons;
+- (void)showEnableLocationMessage;
+@end
+
+@implementation PDNearbyViewController
+@synthesize sortByDateButton;
+@synthesize sortByRankingButton;
+@synthesize sorting, locationServiceWaitTimer;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+		
+    }
+    return self;
+}
+							
+- (void)viewDidLoad
+{    
+	[super viewDidLoad];
+	[self initInterface];
+<<<<<<< HEAD
+	self.title = NSLocalizedString(@"Nearby", nil);
+=======
+	self.title = NSLocalizedString(@"Nearby",nil);
+>>>>>>> ltt/Fetches_Weather_Information
+	if (![PDServerExchange isInternetReachable]) {
+		[self showNoInternetButton];
+	}
+	[self initLocationServices];
+}
+
+- (void)viewDidUnload
+{
+	[self setLocationServiceWaitTimer:nil];
+    [self setPhotosTableView:nil];
+    [self setSortByDateButton:nil];
+    [self setSortByRankingButton:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	[[MGLocationHelper sharedInstance] stopUpdatingLocation];
+}
+
+
+#pragma mark - Private
+
+- (void)showEnableLocationMessage
+{
+	if (self.itemsTableView.isRefreshing) {
+		self.itemsTableView.isRefreshing = NO;
+	}
+	[UIAlertView showAlertWithTitle:nil message:NSLocalizedString(@"Enable location service for Pashadelic.\nImprove your experience on pashadelic and find photo-spots close to you!", nil)];
+}
+
+- (void)initInterface
+{
+	[self initPhotosTable];
+	[self setLeftButtonToMainMenu];
+	[self setRightBarButtonToButton:[self grayBarButtonWithTitle:NSLocalizedString(@"filter", nil) action:@selector(showMenu:)]];
+	[self refreshSortButtons];
+	[self refreshViewMode];
+}
+
+- (void)refreshSortButtons
+{
+	sortByDateButton.selected = (sorting == PDNearbySortTypeByDate);
+	sortByRankingButton.selected = (sorting == PDNearbySortTypeByPopularity);
+}
+
+- (void)locationChanged
+{
+	[locationServiceWaitTimer invalidate];
+	if (isLocationReceived && !self.isLoading) return;
+	isLocationReceived = YES;
+	isLocationServiceDenied = NO;
+	
+	[self fetchData];
+}
+
+- (void)locationFail:(NSNotification *)notification
+{
+	self.isLoading = NO;
+	isLocationReceived = YES;
+	[locationServiceWaitTimer invalidate];
+	NSError *error = notification.userInfo[@"error"];
+	if (error.code == kCLErrorDenied) {
+		isLocationServiceDenied = YES;
+		[self showEnableLocationMessage];
+		
+	} else {
+		isLocationServiceDenied = NO;
+		if (error.code == kCLErrorLocationUnknown) {
+			[self serverExchange:nil didFailWithError:NSLocalizedString(@"Location is currently unknown", nil)];
+		} else {
+			[self serverExchange:nil didFailWithError:
+			 [NSString stringWithFormat:NSLocalizedString(@"Error receiving location:\n%@", nil), error.description]];
+		}
+	}
+}
+
+- (void)locationTimeout
+{
+	self.isLoading = NO;
+	isLocationReceived = YES;
+	[self serverExchange:nil didFailWithError:NSLocalizedString(@"Cannot determinate location, please try again later", nil)];
+}
+
+- (void)initLocationServices
+{
+	locationServiceWaitTimer = [NSTimer scheduledTimerWithTimeInterval:15
+											 target:self
+										   selector:@selector(locationTimeout)
+										   userInfo:nil
+											repeats:NO];
+	isLocationReceived = [MGLocationHelper sharedInstance].isLocationReceived;
+	
+	if (!isLocationReceived) {
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(locationChanged)
+													 name:MGLocationChangedNotification
+												   object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(locationFail:)
+													 name:MGLocationReceiveDidFailNotification
+												   object:nil];
+	} else {
+		[self fetchData];
+	}
+}
+
+
+#pragma mark - Public
+
+- (NSString *)pageName
+{
+	if (self.sorting == PDNearbySortTypeByDate) {
+		return @"Nearby New";
+	} else {
+		return @"Nearby Popular";
+	}
+}
+
+- (void)refreshView
+{
+	[super refreshView];
+	if (self.itemsTotalCount == 0) {
+		self.title = NSLocalizedString(@"Nearby", nil);
+		
+	} else {
+		self.title = [NSString stringWithFormat:NSLocalizedString(@"Nearby (%d)", nil), self.itemsTotalCount];
+	}
+}
+
+- (void)fetchData
+{
+	if (!isLocationReceived) return;
+	
+	if (isLocationServiceDenied) {
+		[[MGLocationHelper sharedInstance] stopUpdatingLocation];
+		return;
+	}
+	[super fetchData];
+	[locationServiceWaitTimer invalidate];
+	if (!self.serverExchange) {
+		self.serverExchange = [[PDServerNearbyLoader alloc] initWithDelegate:self];
+	}
+	[self.serverExchange loadNearbyPage:self.currentPage sorting:sorting range:kPDNearbyRange];
+}
+
+- (void)refetchData
+{
+	sorting = kPDDefaultNearbySorting;
+	[self refreshSortButtons];
+	[super refetchData];
+}
+
+- (void)setItems:(NSArray *)newItems
+{
+	if (sorting == PDNearbySortTypeByDate) {
+		[super setItems:[newItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+			NSNumber *distance1 = [NSNumber numberWithInt:[obj1 distanceInMeters]];
+			NSNumber *distance2 = [NSNumber numberWithInt:[obj2 distanceInMeters]];
+			return [distance1 compare:distance2];
+		}]];
+	} else {
+		[super setItems:newItems];
+	}
+}
+
+- (IBAction)sortTypeChanged:(id)sender 
+{
+	if ([sender isEqual:sortByDateButton]) {
+		if (sorting == PDNearbySortTypeByDate) return;
+		sorting = PDNearbySortTypeByDate;
+		[self refetchDataWithoutResetViewMode];
+		
+	} else {
+		if (sorting == PDNearbySortTypeByPopularity) return;
+		sorting = PDNearbySortTypeByPopularity;
+		[self refetchDataWithoutResetViewMode];
+	}
+	[self refreshSortButtons];
+}
+
+- (void)showMenu:(id)sender
+{
+	PDNearbyMenuView *nearbyMenuView = [[PDNearbyMenuView alloc] init];
+	nearbyMenuView.delegate = self;
+	[nearbyMenuView showMenuInViewController:self];
+}
+
+- (NSArray *)helpID
+{
+	return [[super helpID] arrayByAddingObject:@"NearbyView"];
+}
+
+
+#pragma mark - Server exchange delegate
+
+- (void)serverExchange:(PDServerExchange *)serverExchange didParseResult:(NSDictionary *)result
+{
+	if (![serverExchange isEqual:self.serverExchange]) return;
+	[super serverExchange:serverExchange didParseResult:result];
+	
+	self.itemsTotalCount = [result intForKey:@"total_count"];
+	self.totalPages = [result intForKey:@"total_pages"];	
+	self.items = [serverExchange loadPhotosFromResult];	
+	[self refreshView];
+}
+
+- (void)serverExchange:(PDServerExchange *)serverExchange didFailWithError:(NSString *)error
+{
+	if (self.noInternetButton.hidden == NO) return;
+	
+	self.itemsTotalCount = 0;
+	[super serverExchange:serverExchange didFailWithError:error];
+}
+
+@end

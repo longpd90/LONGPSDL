@@ -1,0 +1,949 @@
+/* No comment provided by engineer. */
+"   Log in with Facebook" = "   Facebookを使ってログイン";
+
+/* No comment provided by engineer. */
+"   Signup with e-mail" = "   メールアドレスを利用";
+
+/* No comment provided by engineer. */
+"   Signup with Facebook" = "   Facebookを利用";
+
+/* No comment provided by engineer. */
+"# photos" = "撮影場所数";
+
+/* No comment provided by engineer. */
+"%@'s followers (%d)" = "%1$@のフォロワー (%2$d)";
+
+/* No comment provided by engineer. */
+"%@'s followings (%d)" = "%@がフォロー中 (%d)";
+
+/* No comment provided by engineer. */
+"%@'s photos (%d)" = "%1$@の写真スポット (%2$d)";
+
+/* No comment provided by engineer. */
+"%@'s wanna snaps (%d)" = "%1$@'s wanna snaps (%2$d)";
+
+/* No comment provided by engineer. */
+"%d days ago" = "%d days ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%d hours ago" = "%d hours ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%d minutes ago" = "%d minutes ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%d month ago" = "%d month ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%d photos" = "%d photos";
+
+/* No comment provided by engineer. */
+"%d weeks ago" = "%d weeks ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%d years ago" = "%d years ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%dd ago" = "%dd ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%dh ago" = "%dh ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%dm ago" = "%dm ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%dw ago" = "%dw ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"%dy ago" = "%dy ago"; /* NEW */
+
+/* No comment provided by engineer. */
+"(%.1f mi)" = "(%.1f マイル)";
+
+/* No comment provided by engineer. */
+"+ Follow" = "+ Follow";
+
+/* No comment provided by engineer. */
+"? help" = "? help";
+
+/* No comment provided by engineer. */
+"About" = "About";
+
+/* No comment provided by engineer. */
+"About Pashadelic" = "パシャデリックについて";
+
+/* No comment provided by engineer. */
+"Add comment..." = "コメントを追加";
+
+/* No comment provided by engineer. */
+"Add up to 3 tags" = "Add up to 3 tags";
+
+/* No comment provided by engineer. */
+"Additional information" = "追加情報";
+
+/* No comment provided by engineer. */
+"Allowing location services will automatically determine your photo-spot!" = "Allowing location services will automatically determine your photo-spot!";
+
+/* No comment provided by engineer. */
+"Altitude" = "Altitude";
+
+/* No comment provided by engineer. */
+"Amateur" = "好きな人";
+
+/* No comment provided by engineer. */
+"Aperture" = "Aperture";
+
+/* No comment provided by engineer. */
+"Avatar image can't be smaller than 300x300 pixels" = "プロフィール写真は縦横300ピクセル以上である必要があります";
+
+/* No comment provided by engineer. */
+"Bio" = "バイオグラフィ";
+
+/* No comment provided by engineer. */
+"blue hour" = "blue hour";
+
+/* No comment provided by engineer. */
+"By %@" = "By %@";
+
+/* No comment provided by engineer. */
+"camera" = "カメラ";
+
+/* No comment provided by engineer. */
+"Camera" = "カメラ";
+
+/* No comment provided by engineer. */
+"Can't get auth token key" = "再度ログインしてください";
+
+/* No comment provided by engineer. */
+"Can't get user ID from server" = "ユーザーIDが見当たりません";
+
+/* No comment provided by engineer. */
+"Can't load image: URL is empty" = "Can't load image: URL is empty"; /* NEW */
+
+/* No comment provided by engineer. */
+"Can't load image:\nIncorrect URL %@" = "Can't load image:\nIncorrect URL %@"; /* NEW */
+
+/* No comment provided by engineer. */
+"cancel" = "キャンセル";
+
+/* No comment provided by engineer. */
+"Cancel" = "キャンセル";
+
+/* No comment provided by engineer. */
+"Cannot determinate location, please try again later" = "位置情報が取得できませんでした。 後ほどサイドお試しください。";
+
+/* No comment provided by engineer. */
+"Cannot determinate you location, try again later" = "位置情報が取得できませんでした。 後ほどサイドお試しください。";
+
+/* No comment provided by engineer. */
+"Change password" = "パスワードの変更";
+
+/* No comment provided by engineer. */
+"Check your internet connection." = "インターネット接続を確認してください";
+
+/* No comment provided by engineer. */
+"City" = "町名";
+
+/* No comment provided by engineer. */
+"Clear image cache" = "キャッシュの削除";
+
+/* No comment provided by engineer. */
+"Click on the photo on the left to change your profile photo" = "プロフィール写真を変更するには、左の写真をクリックしてください";
+
+/* No comment provided by engineer. */
+"collection description" = "collection description";
+
+/* No comment provided by engineer. */
+"Comments, tips, hints : Describe your experience at this photo-spot and help others" = "写真を撮った際のストーリーを入力してください。写真を撮った際のヒントやコツ等。";
+
+/* No comment provided by engineer. */
+"confirm email" = "メールアドレスの確認";
+
+/* No comment provided by engineer. */
+"Confirm Password" = "パスワードの再入力";
+
+/* No comment provided by engineer. */
+"confirm password" = "パスワードの確認";
+
+/* Informing the user an item has finished copying */
+"Copied" = "コピーの完了";
+
+/* No comment provided by engineer. */
+"Copy" = "コピー";
+
+/* Displayed with ellipsis as 'Copying...' when an item is in the process of being copied */
+"Copying" = "コピー中";
+
+/* No comment provided by engineer. */
+"Couldn't get location information" = "位置情報を取得できませんでした";
+
+/* No comment provided by engineer. */
+"Country" = "国名";
+
+/* No comment provided by engineer. */
+"Current Password" = "現在のパスワード";
+
+/* No comment provided by engineer. */
+"date" = "date";
+
+/* No comment provided by engineer. */
+"Date" = "Date";
+
+/* No comment provided by engineer. */
+"disabled" = "disabled"; /* NEW */
+
+/* No comment provided by engineer. */
+"Dismiss" = "失敗";
+
+/* No comment provided by engineer. */
+"Done" = "完了";
+
+/* No comment provided by engineer. */
+"done" = "終了";
+
+/* No comment provided by engineer. */
+"E-mail with password was successfully sent" = "E-mail with password was successfully sent";
+
+/* No comment provided by engineer. */
+"edit" = "edit";
+
+/* No comment provided by engineer. */
+"Edit my page and profile" = "Meページとプロフィールの編集";
+
+/* No comment provided by engineer. */
+"Edit My Profile" = "Edit Profile";
+
+/* No comment provided by engineer. */
+"Edit personal information" = "個人情報の編集";
+
+/* No comment provided by engineer. */
+"Edit Photo" = "写真の編集";
+
+/* No comment provided by engineer. */
+"Email" = "メール";
+
+/* No comment provided by engineer. */
+"email" = "メールアドレス";
+
+/* No comment provided by engineer. */
+"Email and email confirm don't match" = "二つのEメールが同じである必要があります";
+
+/* No comment provided by engineer. */
+"Email failed to send. Please try again." = "メールを送ることができませんでした。再度送信してください";
+
+/* No comment provided by engineer. */
+"Email Notification" = "メール通知";
+
+/* No comment provided by engineer. */
+"Enable" = "設定";
+
+/* No comment provided by engineer. */
+"Enable location service for Pashadelic.\nImprove your experience on pashadelic and find photo-spots close to you!" = "位置情報を有効にして近く\nあなたの被写体を見つけよう！";
+
+/* No comment provided by engineer. */
+"Enabled" = "設定済み";
+
+/* No comment provided by engineer. */
+"enabled" = "enabled"; /* NEW */
+
+/* No comment provided by engineer. */
+"end" = "end";
+
+/* No comment provided by engineer. */
+"Enter a name to begin ..." = "ユーザー名を入力してください";
+
+/* No comment provided by engineer. */
+"enter landmark, city, state name" = "都市名、国名を入力..";
+
+/* No comment provided by engineer. */
+"Enter text to filter friends" = "友達を検索";
+
+/* No comment provided by engineer. */
+"Error receiving location:\n%@" = "位置情報取得のエラー:\n%@";
+
+/* No comment provided by engineer. */
+"Error while parsing server response" = "サーバーエラー";
+
+/* No comment provided by engineer. */
+"explore" = "検索";
+
+/* No comment provided by engineer. */
+"Explore" = "検索";
+
+/* No comment provided by engineer. */
+"Exploring" = "検索";
+
+/* No comment provided by engineer. */
+"Facebook" = "Facebook";
+
+/* Informing the user a process has failed */
+"Failed" = "失敗しました";
+
+/* No comment provided by engineer. */
+"Featured" = "ベスト";
+
+/* No comment provided by engineer. */
+"Female" = "女性";
+
+/* No comment provided by engineer. */
+"filter" = "絞り込み";
+
+/* No comment provided by engineer. */
+"filter by date" = "日月で絞込み";
+
+/* No comment provided by engineer. */
+"filter by time" = "時間で絞込み";
+
+/* No comment provided by engineer. */
+"Finish" = "終了";
+
+/* No comment provided by engineer. */
+"First name" = "名";
+
+/* No comment provided by engineer. */
+"Focal Length" = "Focal Length";
+
+/* No comment provided by engineer. */
+"Follow us on Twitter" = "Twitterでフォローする";
+
+/* No comment provided by engineer. */
+"followers" = "フォロワー";
+
+/* No comment provided by engineer. */
+"Followers" = "Followers";
+
+/* No comment provided by engineer. */
+"followers\n%@" = "フォロアー\n%@";
+
+/* No comment provided by engineer. */
+"Following" = "Following";
+
+/* No comment provided by engineer. */
+"Followings" = "Followings";
+
+/* No comment provided by engineer. */
+"followings" = "followings";
+
+/* No comment provided by engineer. */
+"followings\n%@" = "フォロー中\n%@";
+
+/* No comment provided by engineer. */
+"forecast" = "forecast";
+
+/* No comment provided by engineer. */
+"Forgot password" = "Forgot password";
+
+/* No comment provided by engineer. */
+"from to" = "絞り込み";
+
+/* No comment provided by engineer. */
+"full screen" = "full screen";
+
+/* No comment provided by engineer. */
+"golden hour" = "golden hour";
+
+/* No comment provided by engineer. */
+"Got It!" = "Got It!";
+
+/* No comment provided by engineer. */
+"Hobbyist" = "趣味レベル";
+
+/* No comment provided by engineer. */
+"home" = "home";
+
+/* No comment provided by engineer. */
+"Hot" = "ホット";
+
+/* No comment provided by engineer. */
+"http://api.pashadelic.com/pages/term_of_use" = "http://api.pashadelic.com/pages/term_of_use";
+
+/* No comment provided by engineer. */
+"hybrid" = "航空写真";
+
+/* No comment provided by engineer. */
+"I Am Following" = "Following";
+
+/* No comment provided by engineer. */
+"I find GREAT app called %@, try it\n%@" = "%@を使って世界中の写真スポットを探しています。\n%@";
+
+/* No comment provided by engineer. */
+"id or email" = "ユーザIDかメールアドレス";
+
+/* No comment provided by engineer. */
+"Incorrect login and password" = "Incorrect login and password"; /* NEW */
+
+/* No comment provided by engineer. */
+"Info was updated" = "情報が更新されました";
+
+/* No comment provided by engineer. */
+"Interests" = "趣味・興味";
+
+/* No comment provided by engineer. */
+"invite" = "招待";
+
+/* No comment provided by engineer. */
+"Invite Friends" = "Invite Friends";
+
+/* No comment provided by engineer. */
+"inviting" = "招待中";
+
+/* No comment provided by engineer. */
+"Irrelevant Content (3D, graphics)" = "適さない内容 (3D, グラフィック)";
+
+/* No comment provided by engineer. */
+"ISO / Film" = "ISO / Film";
+
+/* No comment provided by engineer. */
+"just now" = "just now"; /* NEW */
+
+/* No comment provided by engineer. */
+"km" = "km";
+
+/* No comment provided by engineer. */
+"Last name" = "姓";
+
+/* No comment provided by engineer. */
+"Library" = "ライブラリー";
+
+/* No comment provided by engineer. */
+"Like us on Facebook" = "Facebookでいいね！を押す";
+
+/* Loading Status */
+"Loading..." = "ローディング中";
+
+/* No comment provided by engineer. */
+"Location" = "位置情報";
+
+/* No comment provided by engineer. */
+"Location is currently unknown" = "Location is currently unknown";
+
+/* No comment provided by engineer. */
+"Log in" = "ログイン";
+
+/* No comment provided by engineer. */
+"Log in using id and password" = "IDとパスワードを利用";
+
+/* No comment provided by engineer. */
+"Logout" = "ログアウト";
+
+/* No comment provided by engineer. */
+"m" = "m";
+
+/* No comment provided by engineer. */
+"magic hour" = "magic hour";
+
+/* No comment provided by engineer. */
+"Male" = "男性";
+
+/* No comment provided by engineer. */
+"map" = "地図／写真";
+
+/* No comment provided by engineer. */
+"map tool" = "マップツール";
+
+/* No comment provided by engineer. */
+"Me" = "Me";
+
+/* No comment provided by engineer. */
+"moon" = "moon";
+
+/* No comment provided by engineer. */
+"moonrise" = "月の出";
+
+/* No comment provided by engineer. */
+"moonset" = "月の入";
+
+/* No comment provided by engineer. */
+"My Followers" = "My Followers";
+
+/* No comment provided by engineer. */
+"My Followings" = "My Followings";
+
+/* No comment provided by engineer. */
+"My Photo spots" = "My Photo Spots";
+
+/* No comment provided by engineer. */
+"My Settings" = "My Settings";
+
+/* No comment provided by engineer. */
+"My Wannago" = "撮りたい！";
+
+/* No comment provided by engineer. */
+"Nearby" = "周辺";
+
+/* No comment provided by engineer. */
+"Nearby (%d)" = "周辺 (%d)";
+
+/* No comment provided by engineer. */
+"Nearby collect" = "Nearby collect";
+
+/* No comment provided by engineer. */
+"New avatar was uploaded" = "新しいプロフィール写真がアップされました";
+
+/* No comment provided by engineer. */
+"new notifications" = "new notifications";
+
+/* No comment provided by engineer. */
+"New Password" = "新しいパスワード";
+
+/* No comment provided by engineer. */
+"next" = "次へ";
+
+/* No comment provided by engineer. */
+"next ⇒" = "次へ";
+
+/* No comment provided by engineer. */
+"No" = "いいえ";
+
+/* No comment provided by engineer. */
+"No image data" = "No image data";
+
+/* No comment provided by engineer. */
+"No photo is available" = "写真が見当たりません";
+
+/* No comment provided by engineer. */
+"Notification settings" = "お知らせ通知の設定";
+
+/* No comment provided by engineer. */
+"Notifications" = "お知らせ";
+
+/* No comment provided by engineer. */
+"notifications" = "お知らせ";
+
+/* No comment provided by engineer. */
+"now" = "now"; /* NEW */
+
+/* Used in the context: 'Showing 1 of 3 items' */
+"of" = "の";
+
+/* No comment provided by engineer. */
+"Offensive (nude, obscene, violence)" = "不快な写真 (ヌード, 猥褻, 暴力)";
+
+/* OK button title */
+"OK" = "はい";
+
+/* No comment provided by engineer. */
+"Others" = "その他";
+
+/* No comment provided by engineer. */
+"password" = "パスワード";
+
+/* No comment provided by engineer. */
+"Password must be at least 6 characters long" = "Password must be at least 6 characters long";
+
+/* No comment provided by engineer. */
+"Password was changed" = "Password was changed";
+
+/* No comment provided by engineer. */
+"Passwords don't match" = "パスワードが違います";
+
+/* No comment provided by engineer. */
+"Phone" = "電話";
+
+/* No comment provided by engineer. */
+"phone number (optional)" = "電話番号 (オプション)";
+
+/* No comment provided by engineer. */
+"Photo" = "写真";
+
+/* No comment provided by engineer. */
+"photo" = "photo";
+
+/* No comment provided by engineer. */
+"Photo nearby" = "周辺写真";
+
+/* No comment provided by engineer. */
+"photo of" = "photo of";
+
+/* No comment provided by engineer. */
+"Photo spot was successfully\nadded to a collection." = "Photo spot was successfully\nadded to a collection.";
+
+/* No comment provided by engineer. */
+"Photo spots you wanna snap that are\nwithin %.1f km of where you are." = "Photo spots you wanna snap that are\nwithin %.1f km of where you are.";
+
+/* No comment provided by engineer. */
+"photo tool" = "photo tool";
+
+/* No comment provided by engineer. */
+"Photo uploaded successfully" = "Photo uploaded successfully";
+
+/* No comment provided by engineer. */
+"Photo-map" = "Photo Spot Map";
+
+/* No comment provided by engineer. */
+"Photo-spots" = "写真スポット";
+
+/* No comment provided by engineer. */
+"photo-spots" = "写真スポット";
+
+/* No comment provided by engineer. */
+"Photo-spots Near by" = "写真スポット付近";
+
+/* No comment provided by engineer. */
+"photos" = "photos";
+
+/* No comment provided by engineer. */
+"photos\n%@" = "写真スポット\n%@";
+
+/* No comment provided by engineer. */
+"Please check internet connection." = "Please check internet connection."; /* NEW */
+
+/* No comment provided by engineer. */
+"Please enable geolocation in Settings and allow Pashadelic determine your location" = "Pashadelicが位置情報を利用できるようにしてください。";
+
+/* No comment provided by engineer. */
+"Please enter collection description" = "Please enter collection description";
+
+/* No comment provided by engineer. */
+"Please enter collection name" = "Please enter collection name";
+
+/* No comment provided by engineer. */
+"Please enter comment text" = "Please enter comment text";
+
+/* No comment provided by engineer. */
+"Please enter email" = "メールを入力してください";
+
+/* No comment provided by engineer. */
+"Please enter login" = "ログインをしてください";
+
+/* No comment provided by engineer. */
+"Please enter new password" = "新しいパスワードを入力してください";
+
+/* No comment provided by engineer. */
+"Please enter password" = "パスワードを入力してください";
+
+/* No comment provided by engineer. */
+"Please enter photo title" = "写真のタイトルを入力してください";
+
+/* No comment provided by engineer. */
+"Please enter username" = "ユーザー名を入力してください";
+
+/* No comment provided by engineer. */
+"Please select photo location!" = "写真の位置情報を選んでください";
+
+/* No comment provided by engineer. */
+"Please wait while app upload info for Facebook" = "Facebookの情報を取得中。しばらくお待ちください。";
+
+/* No comment provided by engineer. */
+"popular" = "popular";
+
+/* No comment provided by engineer. */
+"post" = "投稿";
+
+/* Displayed with ellipsis as 'Preparing...' when an item is in the process of being prepared */
+"Preparing" = "準備中";
+
+/* No comment provided by engineer. */
+"previous" = "前へ";
+
+/* No comment provided by engineer. */
+"previous ⇐" = "戻る";
+
+/* No comment provided by engineer. */
+"Professional" = "巧い人";
+
+/* No comment provided by engineer. */
+"Prohibit any special characters" = "Prohibit any special characters";
+
+/* No comment provided by engineer. */
+"Provide feedback" = "フィードバックの提供";
+
+/* Pull down to refresh status */
+"Pull down to refresh..." = "更新するためにプルダウンしてください";
+
+/* No comment provided by engineer. */
+"Push Notification" = "お知らせ通知";
+
+/* No comment provided by engineer. */
+"Range %.1fkm" = "範囲 %.1fkm";
+
+/* No comment provided by engineer. */
+"Range %dm" = "範囲 %dm";
+
+/* No comment provided by engineer. */
+"Rate it" = "Rate it";
+
+/* No comment provided by engineer. */
+"Rate Us!" = "AppStoreで評価する";
+
+/* Release to refresh status */
+"Release to refresh..." = "更新するために離してください";
+
+/* No comment provided by engineer. */
+"Response from server is null" = "Response from server is null";
+
+/* No comment provided by engineer. */
+"Retry" = "Retry";
+
+/* No comment provided by engineer. */
+"route" = "道順";
+
+/* No comment provided by engineer. */
+"satellite" = "地図";
+
+/* No comment provided by engineer. */
+"Save" = "保存";
+
+/* Informing the user an item has been saved */
+"Saved" = "保存しました";
+
+/* Displayed with ellipsis as 'Saving...' when an item is in the process of being saved */
+"Saving" = "保存中";
+
+/* No comment provided by engineer. */
+"Search" = "Search";
+
+/* No comment provided by engineer. */
+"Search for city, etc..." = "街名などを検索";
+
+/* No comment provided by engineer. */
+"Search users" = "ユーザーの検索";
+
+/* No comment provided by engineer. */
+"Search Users" = "Search Users";
+
+/* No comment provided by engineer. */
+"Search Users Result" = "Search Result";
+
+/* No comment provided by engineer. */
+"Select a landmark in the photo" = "Select a landmark in the photo";
+
+/* No comment provided by engineer. */
+"Select country" = "国名を選択してください";
+
+/* No comment provided by engineer. */
+"Select Landmark" = "Select Landmark";
+
+/* No comment provided by engineer. */
+"Select source" = "ソースを選択してください";
+
+/* No comment provided by engineer. */
+"Select state" = "都道府県を選択してください";
+
+/* No comment provided by engineer. */
+"Selected photo doesn't GPS information.\nDo you want to map the photo manually?" = "選択した写真には位置情報がございません\n写真を自分でマッピングしますか?";
+
+/* No comment provided by engineer. */
+"Server error %d" = "サーバーエラー %d";
+
+/* No comment provided by engineer. */
+"Server return nil" = "Server return nil"; /* NEW */
+
+/* No comment provided by engineer. */
+"settings" = "設定";
+
+/* No comment provided by engineer. */
+"Sex" = "性別";
+
+/* No comment provided by engineer. */
+"Share" = "シェアする";
+
+/* No comment provided by engineer. */
+"share" = "share";
+
+/* No comment provided by engineer. */
+"Share on" = "シェア：";
+
+/* No comment provided by engineer. */
+"Share Photo" = "撮影場所をシェア";
+
+/* No comment provided by engineer. */
+"Show/Hide" = "表示/非表示";
+
+/* No comment provided by engineer. */
+"Shutter" = "Shutter";
+
+/* No comment provided by engineer. */
+"Sign Up" = "会員登録";
+
+/* No comment provided by engineer. */
+"sign up: select your method" = "会員登録: 登録方法選択";
+
+/* No comment provided by engineer. */
+"skip" = "skip";
+
+/* No comment provided by engineer. */
+"Social" = "ソーシャル";
+
+/* No comment provided by engineer. */
+"sort by" = "並び順";
+
+/* No comment provided by engineer. */
+"Spam (ads, self-promotion)" = "スパム (広告, セルフプロモーション)";
+
+/* No comment provided by engineer. */
+"start" = "開始";
+
+/* No comment provided by engineer. */
+"Start typing the landmark name..." = "写真名所を入力してください";
+
+/* No comment provided by engineer. */
+"Start typing the tags name..." = "タグを入力してください";
+
+/* No comment provided by engineer. */
+"State" = "都道府県";
+
+/* No comment provided by engineer. */
+"sunrise" = "日の出";
+
+/* No comment provided by engineer. */
+"sunset" = "日の入";
+
+/* No comment provided by engineer. */
+"Tags (optional)" = "タグ (オプション)";
+
+/* No comment provided by engineer. */
+"Tell us why the photo is inappropriate" = "なぜ写真は不適切なのでしょうか？";
+
+/* No comment provided by engineer. */
+"Terms of Service" = "利用規約";
+
+/* No comment provided by engineer. */
+"Terms Of Use" = "利用規約";
+
+/* No comment provided by engineer. */
+"The photo was taken here" = "写真がここで撮影されました。";
+
+/* No comment provided by engineer. */
+"The photo will be saved in the library, but all additional information will be lost." = "写真はライブラリーに保存されますが、全ての追加情報は保存されません";
+
+/* No comment provided by engineer. */
+"There are" = "There are";
+
+/* No comment provided by engineer. */
+"There are no new notifications" = "新しいお知らせがありません。";
+
+/* No comment provided by engineer. */
+"There was a problem with uploading photo!" = "写真のアップロードが上手くいきませんでした。";
+
+/* No comment provided by engineer. */
+"There was no match." = "該当する情報がありません。";
+
+/* No comment provided by engineer. */
+"time" = "時間";
+
+/* No comment provided by engineer. */
+"Title : Describe the photo" = "タイトル : 写真のタイトル";
+
+/* No comment provided by engineer. */
+"to" = "まで";
+
+/* No comment provided by engineer. */
+"Today" = "今日";
+
+/* No comment provided by engineer. */
+"Tomorrow" = "明日";
+
+/* No comment provided by engineer. */
+"Tools" = "ツール";
+
+/* No comment provided by engineer. */
+"Type cities, landmarks etc." = "街名、ランドマークなどを記入してください";
+
+/* No comment provided by engineer. */
+"unknow" = "不明";
+
+/* No comment provided by engineer. */
+"Unknown error:\n%@" = "不明のエラー:\n%@";
+
+/* No comment provided by engineer. */
+"Upcoming" = "注目株";
+
+/* No comment provided by engineer. */
+"upload" = "アップロード";
+
+/* No comment provided by engineer. */
+"Upload" = "アップロード";
+
+/* No comment provided by engineer. */
+"User" = "写真家";
+
+/* No comment provided by engineer. */
+"user id" = "写真家ID";
+
+/* No comment provided by engineer. */
+"Using id and password" = "メールアドレスを利用";
+
+/* No comment provided by engineer. */
+"View" = "表示";
+
+/* No comment provided by engineer. */
+"wanna-shoot" = "撮りたい！";
+
+/* No comment provided by engineer. */
+"Wanna-snaps" = "collect";
+
+/* No comment provided by engineer. */
+"wannagos\n%@" = "撮りたい！\n%@";
+
+/* No comment provided by engineer. */
+"weather" = "weather";
+
+/* No comment provided by engineer. */
+"When user comments to my photo" = "ユーザーがコメントをしてくれた時";
+
+/* No comment provided by engineer. */
+"When user follow me" = "ユーザーが自分をフォローした時";
+
+/* No comment provided by engineer. */
+"When user like my photo" = "ユーザーが「いいね！」してくれた時";
+
+/* No comment provided by engineer. */
+"When user pins my photo" = "ユーザーが「撮りたい！」をしてくれた時";
+
+/* No comment provided by engineer. */
+"with landmark" = "with landmark";
+
+/* No comment provided by engineer. */
+"Wrong location" = "間違った位置情報";
+
+/* No comment provided by engineer. */
+"Yes" = "はい";
+
+/* No comment provided by engineer. */
+"You can only write review from the website" = "評価はウェブでのみ行えます";
+
+/* No comment provided by engineer. */
+"You deleted photo" = "写真を削除しました";
+
+/* No comment provided by engineer. */
+"You pin location with big zoom.\nAre you sure in correct photo location?" = "ピンの位置は正確ですか？\n他のユーザの為にも、正確な位置に\nピンを設定してください。\nご協力ありがとうございます。";
+
+/* No comment provided by engineer. */
+"You received notification" = "お知らせを受け取りました";
+
+/* No comment provided by engineer. */
+"You reported about photo" = "写真の報告をしました";
+
+/* No comment provided by engineer. */
+"Your account was successfully created" = "アカウントが作成されました";
+
+/* No comment provided by engineer. */
+"Your email address and phone number will always remain private. By clicking Sign-In you are agreeing that you have read and agreed the terms of service" = "ご登録頂いたeメールアドレス及び電話番号は当サービスでのみ利用し、機密保護法に基づいて安全に保管されます。ログイン及びユーザ登録をクリックする事は、利用規約に同意する事と同等の意味を持ちます。";
+
+"Add it to one of the collections below" = "Add it to one of the collections below";
+
+"Create new collection" = "新しいフォルダを作成";
+
+"new" = "新着";
+
+"adds it to wanna snap but not to any particular album" = "";
+
+"Photo spots you wanna snap that are within 1 km of where you are" = "1km以内にコレクトした写真";
+
+"10km" = "10km";
+
+"100m" = "100m";
+
+"read more" = "もっと読む";
+
+"Today's photo" = "今日の写真";
+
+"Tap to access\nyou homepage" = "タッチして\nホームページへ";
+
+"Loading..." = "ローディング中..";
+
+"feed / activities" = "フィード / アクティビティ";
+
+"new photos" = "新着写真";

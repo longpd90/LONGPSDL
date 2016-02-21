@@ -1,0 +1,447 @@
+//  PDTagsViewController.m
+//  Pashadelic
+//
+//  Created by Linh on 2/6/13.
+//
+//
+
+#import "PDTagsViewController.h"
+#import "PDTagCell.h"
+#import "PDCommentCell.h"
+
+@interface PDTagsViewController ()
+- (void)addTagWithString:(NSString *)tagName;
+- (void)removeTagAtIndex:(NSUInteger)index;
+- (void)initTagsTable;
+- (BOOL)validateTextTags:(NSString *)textTag;
+- (void)saveCurrentTags;
+- (void)searchSuggestionTags;
+- (NSArray *)parseSuggestionTagsFromTagList:(NSArray *)tagList;
+- (void)showSearchSuggestions;
+@end
+
+#define kPDTitleTagsLabelHeight             35
+#define kPDTagsCellHeight                   45
+
+@implementation PDTagsViewController
+
+@synthesize tagsTableView;
+@synthesize suggestionsTagsView;
+
+- (void)initTagsTable
+{
+    tagsTableView = [[UITableView alloc] initWithFrame:CGRectZero
+												 style:UITableViewStylePlain];
+    self.tagsTableView.frame = CGRectMake(0, 0, self.view.width, kPDTagsCellHeight * _tags.count);
+
+    tagsTableView.backgroundColor = [UIColor clearColor];
+    tagsTableView.separatorColor = [UIColor clearColor];
+    tagsTableView.dataSource = self;
+    tagsTableView.delegate = self;
+    tagsTableView.scrollEnabled = NO;
+	tagsTableView.autoresizingMask = kFullAutoresizingMask;
+	self.contentScrollView = tagsTableView;
+
+    [self.view addSubview:tagsTableView];
+}
+
+- (void)initTagsTextSearch
+{
+    self.tagsTextField = [[PDSearchTextField alloc]initWithFrame:CGRectMake(5, 5, self.view.width - 10, kPDTitleTagsLabelHeight)];
+    self.tagsTextField.returnKeyType = UIReturnKeyDefault;
+    UIButton *addTagButton = [UIButton buttonWithImage:[UIImage imageNamed:@"btn_plus.png"]];
+    self.tagsTextField.rightView = addTagButton;
+    self.tagsTextField.rightView.hidden = YES;
+    self.tagsTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    [self.tagsTextField setFont:[UIFont systemFontOfSize:14]];
+    [addTagButton addTarget:self
+                     action:@selector(didClickButtonAddTag:)
+           forControlEvents:UIControlEventTouchUpInside];
+    self.tagsTextField.placeholder = [NSString stringWithFormat:@"%@...",NSLocalizedString(@"Start typing the tags name", nil)] ;
+    self.tagsTextField.delegate = self;
+    [self.tagsTextField newInterface];
+    self.tagsTextField.alpha = 0.9;
+    [self.view addSubview:self.tagsTextField];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.frame = self.view.bounds;
+    [self setNewLeftButtonToBack];
+//    PDGradientButton *doneButton = [self newBlueBarButtonWithTitle:NSLocalizedString(@"done", nil) action:@selector(finish:)];
+//    [doneButton setNewBlueGradientButtonStyle];
+//	[self setRightBarButtonToButton:doneButton];
+    [self initTagsTable];
+    [self initTagsTextSearch];
+    self.isSearching = NO;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didChangeTextFieldValue) name:UITextFieldTextDidChangeNotification object:self.tagsTextField];
+    self.suggestionsTagsView = [[PDTagSuggestionView alloc] initWithFrame:CGRectZero];
+	self.suggestionsTagsView.hidden = YES;
+	self.suggestionsTagsView.delegate = self;
+	self.suggestionsTagsView.autoresizingMask = UIViewAutoresizingNone;
+
+	[self.view addSubview:self.suggestionsTagsView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(searchSuggestionTags)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:self.tagsTextField];
+
+    _tags = [[NSMutableArray alloc]init];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload
+{
+	self.suggestionsTagsView = nil;
+	self.serverSearchSuggestionTags = nil;
+	self.tags = nil;
+	self.tagsTextField = nil;
+	self.tagsTableView = nil;
+
+    [super viewDidUnload];
+	
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+    [self setNavigationBarStyle:PDNavigationNewBarStyleBlack];
+    self.title = NSLocalizedString(@"Add up to 3 tags", nil);
+    [self refreshView];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)validateTextTags:(NSString *)textTag
+{
+    NSCharacterSet * characterSet = [NSCharacterSet characterSetWithCharactersInString:@"~!@#$%^[]|{}&*()_+=-/?\\⁄€‹›ﬂ‡°·‚—ºª•¶§∞¢£™¡`"];
+    if ([textTag rangeOfCharacterFromSet:characterSet].location != NSNotFound) {
+        [UIAlertView showAlertWithTitle:nil message:NSLocalizedString(@"Prohibit any special characters", nil)];
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+-(void)viewDidLayoutSubviews
+{
+    self.backgroudImage.frame = self.view.frame;
+}
+- (void)setImageBackGroud:(UIImage *)image
+{
+    if (!self.backgroudImage) {
+        self.backgroudImage = [[UIImageView alloc]initWithImage:image];
+        self.backgroudImage.frame = self.view.frame;
+        [self.backgroudImage setContentMode:UIViewContentModeScaleAspectFill];
+        [self.view addSubview:self.backgroudImage];
+    }
+    else{
+        self.backgroudImage.image = image;
+    }
+  
+    [self.view sendSubviewToBack:self.backgroudImage];
+    
+}
+
+
+-(void)goBack:(id)sender
+{
+    [self finish:nil];
+}
+
+- (void)refreshView
+{
+	self.needRefresh = NO;
+    _tags = [NSMutableArray arrayWithArray:[_photo.tags componentsSeparatedByString:@", "]];
+    if (_tags.count >0) {
+        [tagsTableView reloadData];
+    }
+    [self resetView];
+
+}
+
+- (void)resetView
+{
+    self.tagsTextField.frame = CGRectMake(5, 5 + _tags.count * 45, self.view.width - 10, kPDTitleTagsLabelHeight);
+    self.tagsTableView.frame = CGRectMake(0, 0, self.view.width, kPDTagsCellHeight * _tags.count);
+    
+    self.tagsTableView.hidden = NO;
+    
+    self.tagsTextField.text = nil;
+    self.suggestionsTagsView.hidden = YES;
+    if (_tags.count == kPDMaxPhotoTagsNumber ){
+        self.tagsTextField.hidden = YES;
+        [self.tagsTextField resignFirstResponder];
+    }
+    else
+    {
+        self.tagsTextField.hidden = NO;
+        [self.tagsTextField becomeFirstResponder];
+    }
+    
+}
+
+- (NSString *)pageName
+{
+	return @"Edit Upload Tags";
+}
+
+- (void)finish:(id)sender
+{
+	[self.currentControl performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.5];
+	
+	NSMutableArray *tags = [NSMutableArray array];
+    if (_tags.count > 0) {
+        for (int i = 0; i < [tagsTableView numberOfRowsInSection:0]; i++) {
+            PDTagCell *cell = (PDTagCell *)[tagsTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            if (cell.tagTextField.text.length == 0) continue;
+            
+            if (![self validateTextTags:cell.tagTextField.text]) {
+                [cell.tagTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.1f];
+                return;
+            } else {
+                [tags addObject:cell.tagTextField.text];
+            }
+        }
+        _photo.tags = [tags componentsJoinedByString:@", "];
+    }
+    else
+    {
+        _photo.tags = nil;
+    }
+
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)didClickButtonAddTag:(id)sender
+{
+    [self addTagWithString:self.tagsTextField.text];
+}
+
+- (void)addTagWithString:(NSString *)tagName
+{
+    NSString *tag = [tagName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (tag.length == 0) {
+        return;
+    }
+    
+    if (!self.tagsTableView) {
+        [self initTagsTable];
+    }
+    self.tagsTextField.rightView.hidden = YES;
+	[_tags addObject:tagName];
+    [self.tagsTableView reloadData];
+    [self resetView];
+
+}
+
+- (void)showSearchSuggestions
+{
+    self.suggestionsTagsView.frame = CGRectMake(self.tagsTextField.frame.origin.x, self.tagsTextField.frame.origin.y + kPDTitleTagsLabelHeight,
+												self.tagsTextField.width,self.backgroudImage.frame.size.height - self.tagsTextField.frame.origin.y
+                                                 - kPDTitleTagsLabelHeight);
+	self.suggestionsTagsView.hidden = NO;
+}
+
+- (void)removeTagAtIndex:(NSUInteger)index
+{
+
+	[_tags removeObjectAtIndex:index];
+    [self.tagsTableView reloadData];
+    
+//    self.tagsTextField.frame = CGRectMake(5, 5 + _tags.count * 45, self.view.width - 10, kPDTitleTagsLabelHeight);
+//    self.tagsTableView.frame = CGRectMake(0, 0, self.view.width, kPDTagsCellHeight * _tags.count);
+//    self.tagsTextField.hidden = NO;
+//    NSLog(@"count : %d",_tags.count);
+    [self resetView];
+
+	if (index >= _tags.count) {
+		index = _tags.count - 1;
+	}
+    if (_tags.count == 0) {
+        self.tagsTableView .hidden = YES;
+    }
+    else
+    {
+        self.tagsTableView.hidden = NO;
+    }
+
+}
+
+- (void)saveCurrentTags
+{
+    for (int i = 0; i < [_tags count]; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        PDTagCell *cell = (PDTagCell *)[tagsTableView cellForRowAtIndexPath:indexPath];
+        if (cell.tagTextField.text != nil && cell.tagTextField.text.length > 0) {
+            [_tags setObject:cell.tagTextField.text atIndexedSubscript:i];
+        }
+        else {
+            [_tags setObject:@"" atIndexedSubscript:i];
+        }
+    }
+}
+
+- (void)searchSuggestionTags
+{
+
+    self.serverSearchSuggestionTags.delegate = nil;
+    self.serverSearchSuggestionTags = nil;
+    if (self.tagsTextField.text.length == 0) {
+        self.suggestionsTagsView.hidden = YES;
+    }
+    else {
+        self.serverSearchSuggestionTags = [[PDServerSearchSuggestions alloc] initWithDelegate:self];
+        [self.serverSearchSuggestionTags searchSuggestionsTags:self.tagsTextField.text];
+    }
+
+}
+
+- (NSArray *)parseSuggestionTagsFromTagList:(NSArray *)tagList
+{
+    NSMutableArray *suggestionTags = [[NSMutableArray alloc] initWithCapacity:10];
+    for (int i = 0; i < tagList.count; i++) {
+        [suggestionTags addObject:[[tagList objectAtIndex:i] objectForKey:@"name"]];
+    }
+    return [[NSArray alloc] initWithArray:suggestionTags];
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.tagsTextField resignFirstResponder];
+}
+
+- (void)didChangeTextFieldValue
+{
+    if (self.tagsTextField.text.length > 0) {
+        self.tagsTextField.rightView.hidden = NO;
+    }
+    else
+    {
+        self.tagsTextField.rightView.hidden = YES;
+    }
+}
+
+
+#pragma mark - Table delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _tags.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kPDTagsCellHeight;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *TagCellIdentifier = @"PDTagCell";
+	PDTagCell *cell = (PDTagCell *)[tableView dequeueReusableCellWithIdentifier:TagCellIdentifier];
+	if (!cell) {
+		cell = [UIView loadFromNibNamed:TagCellIdentifier];
+        cell.delegate = self;
+	}
+    cell.tagTextField.tag = indexPath.row;
+    cell.tagTextField.delegate = self;
+    [cell setContentForCell:[_tags objectAtIndex:indexPath.row]];
+	return cell;
+}
+
+
+
+#pragma mark - Search suggestion delegate
+
+- (void)didSrollTableView
+{
+    [self.tagsTextField resignFirstResponder];
+}
+
+- (void)searchSuggestionDidSelect:(NSString *)suggestion
+{
+
+    [self addTagWithString:suggestion];
+
+
+}
+
+
+#pragma mark - Server exchange delegate
+
+- (void)serverExchange:(PDServerExchange *)serverExchange didParseResult:(NSDictionary *)result
+{
+    if (serverExchange == self.serverSearchSuggestionTags) {
+        NSArray *suggestionTags = [self parseSuggestionTagsFromTagList:[result objectForKey:@"tag_list"]];
+        if (suggestionTags.count > 0) {
+            self.suggestionsTagsView.suggestions = suggestionTags;
+            [self.suggestionsTagsView reloadData];
+            if (self.isSearching == YES) {
+                self.isSearching = NO;
+            } else {
+                if (self.suggestionsTagsView.isHidden ) {
+                    [self showSearchSuggestions];
+                }
+            }
+			
+            
+        } else {
+			self.suggestionsTagsView.hidden = YES;
+		}
+    }
+}
+
+- (void)serverExchange:(PDServerExchange *)serverExchange didFailWithError:(NSString *)error
+{
+    if (serverExchange == self.serverSearchSuggestionTags) {
+        if (!self.suggestionsTagsView.hidden) {
+			self.suggestionsTagsView.hidden = YES;
+        }
+    }
+}
+
+
+#pragma mark - PDTagCell delegate
+
+- (void)tagCellAction:(PDTagCell *)cell
+{
+	self.suggestionsTagsView.hidden = YES;
+	NSIndexPath *indexPath = [tagsTableView indexPathForCell:cell];
+	
+    [self removeTagAtIndex:indexPath.row];
+}
+
+
+#pragma mark - UITextField delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    self.isSearching = YES;
+    [self didClickButtonAddTag:nil];
+    return YES;
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self saveCurrentTags];
+
+}
+
+@end

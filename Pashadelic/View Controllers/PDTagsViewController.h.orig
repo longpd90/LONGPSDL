@@ -1,0 +1,35 @@
+//
+//  PDTagsViewController.h
+//  Pashadelic
+//
+//  Created by Linh on 2/6/13.
+//
+//
+
+#import <UIKit/UIKit.h>
+#import "PDViewController.h"
+#import "PDTagCell.h"
+#import "PDPhoto.h"
+#import "PDSearchSuggestionsView.h"
+#import "PDServerSearchSuggestions.h"
+#import "PDSearchTextField.h"
+#import "PDTagSuggestionView.h"
+
+
+@interface PDTagsViewController : PDViewController
+<UITableViewDataSource, UITableViewDelegate, PDTagCellDelegate, UITextFieldDelegate, PDTagSuggestionViewDelegate, PDServerExchangeDelegate>
+
+@property (strong, nonatomic) UIView *tablePlaceholderView;
+@property (strong, nonatomic) PDTagSuggestionView *suggestionsTagsView;
+@property (strong, nonatomic) PDServerSearchSuggestions *serverSearchSuggestionTags;
+@property (strong, nonatomic) UITableView *tagsTableView;
+@property (weak, nonatomic) PDPhoto *photo;
+@property (strong, nonatomic) NSMutableArray *tags;
+@property (strong, nonatomic) UIImageView *backgroudImage;
+@property (strong, nonatomic) PDSearchTextField  *tagsTextField;
+@property BOOL isSearching;
+
+- (void)finish:(id)sender;
+- (void)setImageBackGroud:(UIImage *)image;
+
+@end

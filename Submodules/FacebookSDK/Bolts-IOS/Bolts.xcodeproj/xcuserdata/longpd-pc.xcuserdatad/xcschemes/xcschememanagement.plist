@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Bolts.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>BoltsTestUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>MacBolts.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1EC3015F18CDAA8300D06D07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E8C8EE817F23D1D00E3F1C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E8C8F1817F241DA00E3F1C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E9C3CE817DE9DE000427E62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8EDDA62817E17DDC00655F8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

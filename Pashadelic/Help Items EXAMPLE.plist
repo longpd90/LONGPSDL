@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Tile</key>
+	<array>
+		<dict>
+			<key>Text</key>
+			<string>Tile 1</string>
+			<key>IsInitial</key>
+			<true/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+		<dict>
+			<key>Text</key>
+			<string>Tile 2</string>
+			<key>IsInitial</key>
+			<false/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+	</array>
+	<key>List</key>
+	<array>
+		<dict>
+			<key>Text</key>
+			<string>List help 1</string>
+			<key>IsInitial</key>
+			<false/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+		<dict>
+			<key>Text</key>
+			<string>List help 2</string>
+			<key>IsInitial</key>
+			<true/>
+			<key>Image</key>
+			<string>btn_readmore.png</string>
+		</dict>
+		<dict>
+			<key>Text</key>
+			<string>List help 3</string>
+			<key>IsInitial</key>
+			<false/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+	</array>
+	<key>PhotoTableView</key>
+	<array>
+		<dict>
+			<key>Text</key>
+			<string>Photo table help 1</string>
+			<key>IsInitial</key>
+			<true/>
+			<key>Image</key>
+			<string>btn_readmore.png</string>
+		</dict>
+		<dict>
+			<key>Text</key>
+			<string>Photo table help 2</string>
+			<key>IsInitial</key>
+			<false/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+	</array>
+	<key>TableView</key>
+	<array>
+		<dict>
+			<key>Text</key>
+			<string>Table help 1</string>
+			<key>IsInitial</key>
+			<false/>
+			<key>Image</key>
+			<string>btn_readmore.png</string>
+		</dict>
+		<dict>
+			<key>Text</key>
+			<string>Table help 2</string>
+			<key>IsInitial</key>
+			<true/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+	</array>
+	<key>NearbyView</key>
+	<array>
+		<dict>
+			<key>Text</key>
+			<string>Nearby 1</string>
+			<key>IsInitial</key>
+			<true/>
+			<key>Image</key>
+			<string>btn_readmore.png</string>
+		</dict>
+		<dict>
+			<key>Text</key>
+			<string>Nearby 2</string>
+			<key>IsInitial</key>
+			<true/>
+			<key>Image</key>
+			<string>btn_readless.png</string>
+		</dict>
+	</array>
+</dict>
+</plist>
